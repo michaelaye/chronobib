@@ -1,0 +1,13 @@
+---
+title: "Chronobib Example"
+bibliography: example.bib
+citeproc: false
+filters:
+  - michaelaye/chronobib
+
+nocite: |
+  @*
+---
+
+This is an example document demonstrating the chronobib extension.
+Bibliography entries below are grouped by year with section headings.
