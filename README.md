@@ -1,5 +1,7 @@
 # chronobib
 
+[![DOI](https://zenodo.org/badge/1170832102.svg)](https://doi.org/10.5281/zenodo.18853753)
+
 A [Quarto](https://quarto.org) extension that groups bibliography entries by year with section headings, newest first.
 
 ## Use cases

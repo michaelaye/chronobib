@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Zenodo DOI badge in README.
+- `CITATION.cff` for standardized citation metadata.
 - "Related tools" section in README linking to [highlight-author](https://github.com/michaelaye/highlight-author) and [ads-bib-tools](https://github.com/michaelaye/ads-bib-tools).
 
 ## [0.2.0] - 2026-03-03
