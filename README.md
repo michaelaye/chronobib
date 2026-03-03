@@ -62,6 +62,43 @@ chronobib:
   sort: ascending       # oldest first (default: descending)
 ```
 
+## Splitting by keyword (e.g. refereed / non-refereed)
+
+You can split the bibliography into groups using a BibTeX keyword and display them in Quarto's native tabset panels. This is useful for separating refereed journal articles from conference proceedings.
+
+Add `split-keyword` to your chronobib config and create placeholder divs inside a tabset in the document body:
+
+```yaml
+---
+bibliography: references.bib
+citeproc: false
+filters:
+  - michaelaye/chronobib
+chronobib:
+  split-keyword: refereed
+---
+
+::: {.panel-tabset}
+## Refereed
+
+::: {#refs-refereed}
+:::
+
+## Non-Refereed
+
+::: {#refs-nonrefereed}
+:::
+:::
+```
+
+The filter splits entries based on whether the keyword (here `refereed`) appears in the BibTeX `keywords` field, then fills each placeholder div with year-grouped entries. Quarto handles the tab rendering natively.
+
+**Requirements:**
+
+- Each BibTeX entry must have the keyword (e.g. `refereed`) in its `keywords` field. Entries without the keyword go to the "non" group.
+- The placeholder div IDs must follow the pattern `refs-{keyword}` and `refs-non{keyword}`.
+- When `split-keyword` is not set, the filter produces the standard flat year-grouped output (fully backward-compatible).
+
 ## Combining with highlight-author
 
 chronobib pairs well with [highlight-author](https://github.com/michaelaye/highlight-author). Put highlight-author first since it invokes citeproc; chronobib will detect the existing bibliography and skip the redundant citeproc call:
