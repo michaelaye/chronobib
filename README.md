@@ -99,9 +99,9 @@ The filter splits entries based on whether the keyword (here `refereed`) appears
 - The placeholder div IDs must follow the pattern `refs-{keyword}` and `refs-non{keyword}`.
 - When `split-keyword` is not set, the filter produces the standard flat year-grouped output (fully backward-compatible).
 
-## Combining with highlight-author
+## Related tools
 
-chronobib pairs well with [highlight-author](https://github.com/michaelaye/highlight-author). Put highlight-author first since it invokes citeproc; chronobib will detect the existing bibliography and skip the redundant citeproc call:
+- [highlight-author](https://github.com/michaelaye/highlight-author) — Quarto extension that highlights a specific author's name in bibliography entries. Put highlight-author first since it invokes citeproc; chronobib will detect the existing bibliography and skip the redundant citeproc call:
 
 ```yaml
 citeproc: false
@@ -111,6 +111,8 @@ filters:
 
 highlight-author: "Aye"
 ```
+
+- [ads-bib-tools](https://github.com/michaelaye/ads-bib-tools) — Fetch your complete publication list from NASA ADS by ORCID, with cleanup and refereed/non-refereed tagging. The tagged `.bib` file works directly with chronobib's `split-keyword` feature.
 
 ## License
 
